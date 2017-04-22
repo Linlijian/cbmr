@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+<link href="css/Tcss.css" rel="stylesheet">
+<title>Calorietable [Food health care]</title>
+</head>
+<body>
+<!-- header -->
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html"><img src="img/logo1.png" width="45" height="38" alt=""></a>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="index.html">Home <span class="sr-only">(current)</span></a></li>
+          <li><a href="metabolism.html">Metabolism</a></li>
+          <li><a href="calorietable.html">Calorietable</a></li>
+          <li><a href="activity.html">Purpose</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="aboutus.html">About us</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+    <div class="pang-header">
+      <h1>Calorietable <small>Food health care</small></h1>
+    </div>
+<!-- end header-->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <center><h1> Basal Metabolic Rate (BMR) Man</h1></center>
+      <br><center>
+        <div class="btn-group-lg" role="group" aria-label="...">
+           <a href="calorietable.html"><button type="button" class="btn btn-default">Man</button></a>
+           <a href="calorietablewo.html"><button type="button" class="btn btn-default">Woman</button></a>
+        </div><br>
+    </center>
+      <div class="input-group">
+        <div class="input-group-addon">Hight (cm.)</div>
+        <input id="hight" class="form-control input-lg" type="number" name="h" placeholder="topic">
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="input-group">
+        <div class="input-group-addon">Weight (kg.)</div>
+        <input id="widght" class="form-control input-lg" type="number" name="w" placeholder="topic">
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="input-group">
+        <div class="input-group-addon">Age (year)</div>
+        <input id="age" class="form-control input-lg" type="number" name="age" placeholder="topic">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <br><center>
+      <button type="button" class="btn btn-default" onclick="cal()">Submit</button>
+    </center>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <h3>คำนวณการเผาผลาญพลังงาน Basal Metabolic Rate (BMR)</h3>
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Basal Metabolic Rate (BMR) คือ อัตราการความต้องการเผาผลาญของร่างกายในชีวิตประจำวัน หรือจำนวนแคลอรี่ขั้นต่ำที่ต้องการใช้ในชีวิตแต่ละวัน ดังนั้นการคำนวณ BMR จะช่วยให้คุณคำนวณปริมาณ
+แคลอรี่ที่ใช้ต่อวันเพื่อรักษาน้ำหนักปัจจุบันได้ และเมื่ออายุมากขึ้นเราจะควบคุมน้ำหนักได้ยากขึ้น เพราะ BMR เราลดลง การอดอาหารก็เป็นสาเหตุหนึ่งที่ทำให้ BMR ลดลง วิธีป้องกันคือ "หมั่นออกกำลังกาย"
+เพื่อเพิ่มประสิทธิภาพของการเผาผลาญ ซึ่งจะทำให้ BMR ไม่ลดลงเร็วเกินไป</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="row">
+        <div class="col-md-4">
+          <h4>BMR</h4>
+          <h4>BMI</h4>
+        </div>
+        <div class="col-md-4">
+          <h4 id="bmr">คำตอบ BMR</h4>
+          <h4 id="bmi">คำตอบ BMI</h4>
+        </div>
+        <div class="col-md-4">
+          <h4>หน่วย</h4>
+          <h4>kg/m<sup>2</sup></h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="row">
+      <div class="col-md-4">
+        <h4>BMI kg/m<sup>2</sup></h4>
+        <h4>น้อยกว่า 18.50</h4>
+        <h4>ระหว่าง 18.50 - 22.90</h4>
+        <h4>ระหว่าง 23 - 24.90</h4>
+        <h4>ระหว่าง 25 - 29.90</h4>
+        <h4>มากกว่า 30</h4>
+      </div>
+      <div class="col-md-4">
+        <h4>อยู่ในเกณท์</h4>
+        <h4>น้ำหนักน้อย / ผอม</h4>
+        <h4>ปกติ (สุขภาพดี)</h4>
+        <h4>ท้วม / โรคอ้วนระดับ 1</h4>
+        <h4>อ้วน / โรคอ้วนระดับ 2</h4>
+        <h4>อ้วนมาก / โรคอ้วนระดับ 3</h4>
+      </div>
+      <div class="col-md-4">
+        <h4>ภาวะเสี่ยงต่อโรค</h4>
+        <h4>มากกว่าคนปกติ</h4>
+        <h4>เท่าคนปกติ</h4>
+        <h4>อันตรายระดับ 1</h4>
+        <h4>อันตรายระดับ 2</h4>
+        <h4>อันตรายระดับ 3</h4>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+function cal(){
+  var h,w,a,r;
+  var h1,w1,a1;
+  h1 = document.getElementById('hight').value;
+  w1 = document.getElementById('widght').value;
+  a1 = document.getElementById('age').value;
+  h = parseInt(h1);
+  w = parseInt(w1);
+  a = parseInt(a1);
+  var temp_w,temp_h,temp_a;
+  temp_w = 66 + (13.7 * w);
+  temp_h = (5 * h);
+  temp_a = (6.8 * a);
+  var BMR,BMI_H,BMI;
+   BMR = (temp_w + temp_h) - temp_a;
+   BMI_H = h / 100;
+   BMI = w / (BMI_H * BMI_H);
+   var a = BMR.toFixed(2);
+   var b = BMI.toFixed(2);
+  document.getElementById('bmr').innerHTML = a;
+  document.getElementById('bmi').innerHTML = b;
+}
+</script>
+
+<!--
+<form action="cal.php" method="get">
+  H : <input type="number" name="h" value=""><br>
+  W : <input type="number" name="w" value=""><br>
+  A : <input type="number" name="age" value=""><br>
+  <input type="submit" name="" value="submit">
+</form>
+<!--end body-->
+
+
+
+
+<!-- footer-->
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="row">
+        <div class="col-xs-6 col-md-3">
+        <a href="metabolism.html" class="thumbnail">
+          <img src="img/footer1.png" width="192" height="269.75" alt="Topic 1">
+        </a>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <a href="calorietable.html" class="thumbnail">
+          <img src="img/footer2.png" width="192" height="269.75" alt="Topic 2">
+        </a>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <a href="activity.html" class="thumbnail">
+          <img src="img/footer3.png" width="192" height="269.75" alt="Topic 3">
+        </a>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <a href="aboutus.html" class="thumbnail">
+          <img src="img/footer4.png" width="192" height="269.75" alt="Topic 4">
+        </a>
+      </div>
+    </div>
+</div>
+</div>
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>
